@@ -1,0 +1,62 @@
+.home-howtouse-background {
+  background: var(--natural6);
+  padding: 105px, 0;
+}
+
+/* 전체 레이아웃 */
+.home-howtouse-container {
+  display: flex;
+  flex-direction: column;
+    max-width: 1200px;
+    max-height: 870px;
+  margin: 0 auto;
+  padding: 105px 0;
+  background: #f7f7fb;
+  gap: 16px;
+}
+
+/* 제목 */
+.home-howtouse-container h2 {
+  font: var(--h2);
+  color: var(--natural1);
+}
+
+/* 각각의 카드 래퍼 */
+.home-howtouse-card {
+  display: flex;
+  align-items: center;
+  background: var(--natural5);
+  width: 1200px;
+    height: 400px;
+    min-width: 328px;
+    max-width: 1200px;
+    max-height: 400px;
+    opacity: 1;
+    gap: 24px;
+    border-radius: 20px;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+}
+
+.home-howtouse-img {
+    width: 380px;
+height: 260px;
+min-width: 280px;
+max-width: 380px;
+border-radius: 16px;
+border: solid 1px #e0e0e0;
+}
+
+/* 카드의 텍스트 영역 */
+.home-howtouse-cardtext h3 {
+    font: var(--h3);
+  color: var(--natural1);
+  margin-bottom: 12px;
+}
+
+.home-howtouse-cardtext p {
+  font: var(--subtitle2);
+  color: var(--natural2);;
+}

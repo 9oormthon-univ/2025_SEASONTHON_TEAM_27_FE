@@ -2,3 +2,98 @@
   padding: 0px;
   margin: 0px;
 }
+
+:root {
+  /* Color */
+  --natural1: #111111;
+  --natural2: #4f4f4f;
+  --natural3: #767676;
+  --natural4: #969696;
+  --natural5: #FFFFFF;
+  --natural6: #f7f7fb;
+  --natural7: #e9e9ed;
+
+  --main1: #9112bc;
+  --main2: #be64d5;
+  --main3: #e3bdec;
+
+  --state1: #0075ff;
+  --state2: #e5f1ff;
+
+  --accent1: #ff6b6b;
+
+  /* Typography */
+  --title: 600 50px/1.2 'Pretendard', sans-serif;
+  --h1: 600 40px/1.2 'Pretendard', sans-serif;
+  --h2: 600 32px/1.2 'Pretendard', sans-serif;
+  --h3: 600 24px/1.2 'Pretendard', sans-serif; 
+  --subtitle1: 600 18px/1.2 'Pretendard', sans-serif;
+  --subtitle2: 500 16px/1.2 'Pretendard', sans-serif;
+  --subtitle3: 500 15px/1.2 'Pretendard', sans-serif;
+  --body1: 500 15px/1.2 'Pretendard', sans-serif;
+  --body2: 400 14px/1.2 'Pretendard', sans-serif;
+  --body3: 400 10px/1.2 'Pretendard', sans-serif;
+}
+
+.archive {
+  width: 101px;
+  height: 42px;
+  opacity: 1;
+  gap: 10px;
+  border-radius: 10px;
+  border: none;
+
+  font: var(--subtitle1);
+  color: var(--natural1);
+  background: var(--natural5);
+
+  box-shadow: 
+    0px 4px 10px 0px #0000001A,
+    -4px -6px 10px 0px #C9C9C940 inset;
+}
+
+.subscribe1 {
+  width: 101px;
+  height: 42px;
+  opacity: 1;
+  gap: 10px;
+  border-radius: 10px;
+  border: none;
+
+  font: var(--subtitle1);
+  color: var(--natural5);
+  background: var(--main1);
+
+  box-shadow: 
+    0px 10px 10px 0px rgba(0, 0, 0, 0.1),
+    3px 4px 12px 0px var(--main2) inset,
+    -2px -4px 12px 0px rgba(131, 18, 169, 1) inset,
+    -1px -2px 6px 0px var(--main2) inset;
+}
+
+.subscribe2 {
+  width: 378px;
+  height: 89px;
+  top: 564px;
+  left: 80px;
+  opacity: 1;
+  gap: 10px;
+  border-radius: 100px;
+  padding-top: 30px;
+  padding-right: 76px;
+  padding-bottom: 30px;
+  padding-left: 76px;
+  border: none;
+
+  font: var(--h3);
+  color: var(--natural5);
+  background: var(--main1);
+
+  box-shadow:
+    0px 4px 4px 0px #00000040,
+    2px 2px 10px 0px #00000014,
+    3px 4px 12px 0px var(--main2) inset,
+    -2px -4px 12px 0px #8312A9 inset,
+    2px 2px 6px 0px #FFFFFF80 inset,
+    -1px -2px 6px 0px var(--main2) inset;
+}

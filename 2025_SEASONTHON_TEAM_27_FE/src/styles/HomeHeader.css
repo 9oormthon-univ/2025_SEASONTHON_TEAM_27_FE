@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--natural5);
+  height: 75px;
+  padding: 0 48px;
+}
+
+.header-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 1;
+}
+
+.header-logo {
+    width: 24;
+    height: 24;
+    top: 27px;
+    left: 48px;
+    opacity: 1;
+    background: #d9d9d9;
+}
+
+.header-title {
+  font: var(--h3);
+  color: var(--natural1);
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

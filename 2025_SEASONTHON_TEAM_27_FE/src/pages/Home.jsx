@@ -3,7 +3,6 @@ import ganpan from '../assets/ganpan.svg';
 import HomeSubscribe from '../components/HomeSubscribe';
 import HomeHowToUse from '../components/HomeHowToUse';
 import HomeReview from '../components/HomeReview';
-import HomeQnA from '../components/HomeQnA';
 import HomeFooter from '../components/HomeFooter';
 
 
@@ -24,9 +23,6 @@ export default function Home() {
       </div>
       <div>
           <HomeReview />
-      </div>
-      <div>
-          <HomeQnA />
       </div>
       <div>
           <HomeFooter />
