@@ -1,4 +1,7 @@
 import "../styles/HomeHowToUse.css";
+import mon from '../assets/monday.svg'
+// import wed from '../assets/wednesday.svg'
+// import fri from '../assets/friday.svg'
 
 export default function HomeHowToUse() {
 
@@ -8,7 +11,7 @@ export default function HomeHowToUse() {
             <h2>이렇게 사용해요</h2>
             
             <div className="home-howtouse-card">
-                <img className="home-howtouse-img" alt="돌아가는 달력"/>
+                <img src={mon} className="home-howtouse-img" alt="돌아가는 달력"/>
                 <div className="home-howtouse-cardtext">
                 <h3>요일마다 다른 소식</h3>
                 <p>요일마다 원하는 주제의 글을 메일로 받아볼 수 있어요</p>

@@ -1,0 +1,119 @@
+.archive-bg {
+  background: #f9fafd;
+  min-height: 100vh;
+}
+
+.archive-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 32px 32px;
+}
+
+.archive-title {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 36px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.archive-desc {
+  font-size: 19px;
+  color: #888;
+  margin-bottom: 32px;
+}
+
+.archive-tabs {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 12px;
+}
+
+.archive-tab {
+  background: none;
+  border: none;
+  font-family: Pretendard;
+  font-size: 20px;
+  color: #aaa;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.archive-tab.active {
+  color: #7b1fa2;
+  border-bottom: 2px solid #7b1fa2;
+  font-weight: 700;
+}
+
+.archive-line {
+  border: none;
+  border-bottom: 1.5px solid #e6e8ec;
+  margin-bottom: 26px;
+}
+
+.archive-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 38px;
+}
+
+.archive-select {
+  font-family: Pretendard;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #e6e8ec;
+  padding: 9px 16px;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 54px;
+}
+
+.archive-list-item {
+  font-family: Pretendard;
+  font-size: 21px;
+  color: #222;
+}
+
+.archive-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 2px 6px 12px 0px #00000009;
+  width: 270px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.archive-pagination-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #888;
+  cursor: pointer;
+}
+
+.archive-pagination-num {
+  font-size: 18px;
+  color: #888;
+  width: 22px;
+  text-align: center;
+  font-family: Pretendard;
+  font-weight: 500;
+}
+
+.archive-pagination-num.active {
+  color: #7b1fa2;
+  font-weight: 700;
+}

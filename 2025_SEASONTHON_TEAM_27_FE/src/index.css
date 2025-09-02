@@ -50,6 +50,8 @@
   box-shadow: 
     0px 4px 10px 0px #0000001A,
     -4px -6px 10px 0px #C9C9C940 inset;
+
+    cursor: pointer;
 }
 
 .subscribe1 {
@@ -69,6 +71,8 @@
     3px 4px 12px 0px var(--main2) inset,
     -2px -4px 12px 0px rgba(131, 18, 169, 1) inset,
     -1px -2px 6px 0px var(--main2) inset;
+
+    cursor: pointer;
 }
 
 .subscribe2 {
@@ -96,4 +100,6 @@
     -2px -4px 12px 0px #8312A9 inset,
     2px 2px 6px 0px #FFFFFF80 inset,
     -1px -2px 6px 0px var(--main2) inset;
+
+    cursor: pointer;
 }

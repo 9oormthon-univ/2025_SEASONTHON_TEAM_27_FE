@@ -1,0 +1,234 @@
+.subscribe-modal-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.subscribe-modal {
+  background: #fff;
+  border-radius: 22px;
+  width: 560px;
+  padding: 48px 32px 32px;
+  box-shadow: 0 6px 28px #0000001a;
+  position: relative;
+  max-width: 95vw;
+  box-sizing: border-box;
+}
+
+.close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.close-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.subscribe-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 44px;
+}
+
+.domain-area {
+  background: transparent;
+  height: 88px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.domain-area.error {
+  background: #dde5ff;
+  border: 2px solid #4160e8;
+  padding: 18px 22px 0 22px;
+  height: auto;
+  justify-content: flex-start;
+}
+
+.domain-label {
+  font-size: 20px;
+  color: #7a7a7a;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.domain-checks {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.domain-check-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  outline-offset: 3px;
+}
+
+.domain-check-label:focus-visible {
+  outline: 2px solid #4160e8;
+  border-radius: 6px;
+}
+
+/* 숨긴 실제 체크박스 */
+.custom-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* 커스텀 체크박스 박스 */
+.custom-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #555;
+  border-radius: 6px;
+  box-sizing: border-box;
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* 체크되었을 때 스타일 */
+.custom-checkbox-input:checked + .custom-checkbox {
+  background-color: #4160e8;
+  border-color: #4160e8;
+}
+
+/* 체크 아이콘 스타일 (꺾인 체크 표시) */
+.custom-checkbox-input:checked + .custom-checkbox::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+/* 키보드 포커스 스타일 */
+.custom-checkbox-input:focus-visible + .custom-checkbox {
+  outline: 3px solid #4dabf7;
+  outline-offset: 2px;
+}
+
+.domain-label-text {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+  user-select: none;
+}
+
+.domain-day-text {
+  font-weight: 400;
+  font-size: 11px;
+  color: #999;
+  user-select: none;
+}
+
+.domain-error-label {
+  color: #4160e8;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.email-area {
+  margin-bottom: 32px;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-area.error {
+  background: #eaf0ff;
+  border-radius: 12px;
+  border: 2px solid #4160e8;
+  padding: 18px 22px;
+}
+
+.email-label {
+  font-size: 20px;
+  color: #7a7a7a;
+  font-weight: 600;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.email-input {
+  width: 100%;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1.5px solid #e7e9ee;
+  padding: 18px 20px;
+  font-size: 18px;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.email-error-label {
+  color: #4160e8;
+  font-size: 14px;
+  margin-left: 2px;
+  margin-top: 4px;
+}
+
+.subscribe-btn {
+  width: 100%;
+  margin-top: 34px;
+  background: #7b1fa2;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  border-radius: 32px;
+  padding: 18px 0;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 18px #7b1fa215;
+  letter-spacing: -1.3px;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #9338d1;
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+  .subscribe-modal {
+    width: 90vw;
+    padding: 40px 24px 24px;
+  }
+
+  .domain-checks {
+    gap: 14px;
+  }
+}

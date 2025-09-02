@@ -1,0 +1,189 @@
+.home-review-background {
+  background: #f9fafd;
+  padding: 142px 0;
+  align-items: center;
+}
+
+/* 전체 레이아웃 */
+.home-review-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0;
+}
+
+/* 후기 타이틀 */
+.home-review-title {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -2.5%;
+  color: #111;
+}
+
+/* 후기 카드 래퍼 */
+.home-review-cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 16px;
+  margin-bottom: 64px;
+}
+
+/* 단일 후기 카드 */
+.home-review-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 278px;
+  /* height 삭제 (유동적으로 늘어나도록) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 2px 4px 10px 0px #0000000A;
+}
+
+.home-review-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-review-photo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.home-review-card h3 {
+  font: var(--subtitle2);
+  color: var(--natural1);
+}
+
+.home-review-card p {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--natural3);
+  margin-top: 6px;
+}
+
+.home-review-card .home-review-card-content {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -2.5%;
+  color: var(--natural1);
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+/* FAQ 영역 전체 */
+.home-faq-section {
+  max-width: 1200px;
+  margin-top: 62px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* FAQ 타이틀&설명 */
+.home-faq-titlebox {
+  min-width: 290px;
+}
+
+.home-faq-title {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -2.5%;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.home-faq-desc {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -2.5%;
+  color: var(--natural3);
+}
+
+/* FAQ 질문 리스트 */
+.home-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-faq-item {
+  width: 687px;
+  min-width: 350px;
+  height: 72px;
+  border-radius: 20px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: space-between;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -2.5%;
+  color: #111;
+  cursor: pointer;
+  transition: box-shadow 0.22s;
+  box-shadow: 2px 6px 12px 0px #0000000A;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* 내부 div 높이 제거 */
+.home-faq-item > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 텍스트 수직 가운데 정렬 */
+}
+
+/* 열림 상태 */
+.home-faq-item.faq-toggle.open {
+  box-shadow: 0px 4px 16px 0px rgba(19, 15, 63, 0.11);
+  height: auto;
+  align-items: center; /* 답변이 보이므로 위쪽 정렬 */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.home-faq-item.faq-toggle.open > div {
+  height: auto;
+  justify-content: flex-start;
+}
+
+
+/* FAQ 답변 */
+.faq-answer {
+  overflow: hidden;
+  max-height: 300px; /* 충분히 크게 하여 닫힐 때 튀는 현상 완화 */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 12px;
+  height: 0;
+  pointer-events: none; /* 닫힌 상태 클릭 방지 */
+}
+
+.faq-answer.open {
+  opacity: 1;
+  height: auto; /* 높이 자동 조절 */
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
