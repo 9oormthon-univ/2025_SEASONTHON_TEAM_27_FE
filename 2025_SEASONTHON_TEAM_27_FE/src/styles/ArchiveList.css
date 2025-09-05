@@ -1,91 +1,104 @@
 .archive-bg {
-  background: #f9fafd;
-  min-height: 100vh;
+  background: var(--back1);
+  min-height: 800px;
+  padding: 20px 360px;
 }
 
 .archive-wrap {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 32px 32px;
 }
 
 .archive-title {
-  font-family: Pretendard;
-  font-weight: 700;
-  font-size: 36px;
-  color: #111;
-  margin-bottom: 8px;
+  font: var(--h2);
+  color: var(--neutral1);
+  margin-bottom: 12px;
 }
 
 .archive-desc {
-  font-size: 19px;
-  color: #888;
-  margin-bottom: 32px;
+  font: var(--body2);
+    color: var(--neutral3);
+    margin-bottom: 40px;
 }
-
 .archive-tabs {
   display: flex;
   gap: 36px;
   margin-bottom: 12px;
+  margin-left : 20px;
 }
 
 .archive-tab {
   background: none;
   border: none;
-  font-family: Pretendard;
-  font-size: 20px;
-  color: #aaa;
-  border-bottom: 2px solid transparent;
+  font: var(--subtitle2);
+color : var(--neutral4);
   cursor: pointer;
   padding-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
 .archive-tab.active {
-  color: #7b1fa2;
-  border-bottom: 2px solid #7b1fa2;
-  font-weight: 700;
+  color: var(--main1);
+  font: var(--subtitle2);
+  transition: color 0.3s ease;
 }
+
+
+
 
 .archive-line {
   border: none;
-  border-bottom: 1.5px solid #e6e8ec;
-  margin-bottom: 26px;
+  border-bottom: 1px solid var(--neutral4);
+  margin-bottom: 9px;
 }
 
 .archive-filter {
   display: flex;
   gap: 10px;
-  margin-bottom: 38px;
+  margin-left: 20px;
+  margin-bottom: 8px;
 }
 
 .archive-select {
-  font-family: Pretendard;
-  font-size: 18px;
-  border-radius: 12px;
-  border: 1px solid #e6e8ec;
-  padding: 9px 16px;
-  background: #fff;
-  color: #111;
+  font: var(--body3);
+  color: var(--neutral3);
+width: 80px;
+height: 35px;
+opacity: 1;
+border-radius: 10px;
+border: none;
+  padding: 8px 12px;
+  background-color: #fff;
   cursor: pointer;
-  font-weight: 500;
 }
 
 .archive-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 54px;
+  margin-bottom: 20px;
 }
 
 .archive-list-item {
-  font-family: Pretendard;
-  font-size: 21px;
-  color: #222;
+    display: flex;
+    align-items: center;
+    font: var(--body3);
+    color: var(--neutral2);
+  height: 70px;
+  padding-left: 24px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.archive-list-item:hover {
+  background: var(--back2);
+  color: var(--main1);
+  text-decoration: none;  /* 밑줄 제거 */
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .archive-pagination {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 12px;
   background: #fff;
@@ -97,6 +110,7 @@
 }
 
 .archive-pagination-btn {
+  width: 48px;
   background: none;
   border: none;
   font-size: 26px;
@@ -104,6 +118,7 @@
   cursor: pointer;
 }
 
+/* 추가 - 페이지네이션 숫자 고정 너비, 변화 최소화 */
 .archive-pagination-num {
   font-size: 18px;
   color: #888;
@@ -111,9 +126,78 @@
   text-align: center;
   font-family: Pretendard;
   font-weight: 500;
+  user-select: none;
+  transition: color 0.3s ease;
 }
 
 .archive-pagination-num.active {
   color: #7b1fa2;
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .archive-bg {
+    padding: 20px;
+  }
+
+  .archive-title {
+    font: var(--h3);
+  }
+
+  .archive-desc {
+    font: var(--body3);
+    margin-bottom: 24px;
+  }
+
+  .archive-tabs {
+    gap: 24px;
+    margin-left: 0;
+    overflow-x: auto;
+  }
+
+  .archive-tab {
+    margin-left: 20px;
+    font: var(--subtitle3);
+  }
+
+  .archive-tab.active {
+    font: var(--subtitle3);
+  }
+
+  .archive-line {
+    margin-bottom: 6px;
+  }
+
+  .archive-filter {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .archive-select {
+    width: 70px;
+    height: 30px;
+    font: var(--body4);
+    padding: 6px 10px;
+  }
+
+  .archive-list-item {
+    font: var(--body4);
+    height: 60px;
+    padding-left: 16px;
+  }
+
+  .archive-pagination {
+    width: 220px;
+    padding: 8px;
+  }
+
+  .archive-pagination-btn {
+    width: 40px;
+    font-size: 22px;
+  }
+
+  .archive-pagination-num {
+    font-size: 16px;
+    width: 18px;
+  }
 }

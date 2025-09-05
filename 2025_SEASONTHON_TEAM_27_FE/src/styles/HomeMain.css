@@ -1,0 +1,61 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--back1);
+  align-items: center;
+}
+
+.main-bg-img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.main-mail {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-mail-img {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  left: 0;
+  top: 0;
+}
+
+.main-mail-img.visible {
+  opacity: 1;
+  z-index: 2;
+}
+
+.main-mail-img.hidden {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* 모든 메일 이미지에 동일한 회전 적용 */
+.mail-rotated {
+  transform: rotate(-20deg);
+}
+
+/* 반응형 예시 */
+/* @media (max-width: 768px) {
+  .main-mail-img {
+    width: 120px;
+    max-width: 70vw;
+  }
+  .main-bg-img {
+    height: 100vh;
+  }
+} */

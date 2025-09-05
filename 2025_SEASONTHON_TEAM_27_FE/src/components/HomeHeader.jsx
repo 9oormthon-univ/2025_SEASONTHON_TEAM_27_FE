@@ -3,6 +3,8 @@ import '../styles/HomeHeader.css'
 import SubscribeModal from './SubscribeModal';
 import { useNavigate } from "react-router-dom"
 
+import logo from '../assets/logo.svg';
+
 export default function HomeHeader() {
   const nav = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +17,7 @@ export default function HomeHeader() {
     <div>
       <div className="header">
         <div className="header-logo-box" onClick={goToHome}>
-          <img className="header-logo" alt="logo"/>
+          <img src={logo} className="header-logo" alt="logo"/>
           <h3 className="header-title">메일트렌드</h3>
         </div>
         <div className="header-btns">

@@ -4,14 +4,56 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: var(--natural6);
+  background: var(--neutral6);
+  padding-top: 170px;
+  padding-bottom: 170px;
+  opacity: 1;
+  background-color: var(--back1);
 }
 
 /* 제목 스타일 */
 .home-subscribe-container h1 {
     font: var(--h2);
-  color: var(--natural1);
+  color: var(--neutral1);
   text-align: center;
   margin-bottom: 75px;
+}
+
+
+.subscribe2 {
+  display: flex;
+  width: 305px;
+  height: 61px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+
+  font: var(--button1);
+  color: var(--neutral5);
+  background: var(--main1);
+
+  box-shadow: -1px -2px 6px 0 var(--main-02, #BE64D5) inset, 
+    -2px -4px 4px 0 var(--main-01, #9112BC) inset,
+     3px 4px 12px 0 var(--main-02, #BE64D5) inset, 
+     0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .home-subscribe-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .home-subscribe-container h1 {
+    font: var(--h3);
+    margin-bottom: 50px;
+  }
+
+  .subscribe2 {
+    width: 250px;
+    height: 50px;
+    font: var(--button2);
+  }
 }

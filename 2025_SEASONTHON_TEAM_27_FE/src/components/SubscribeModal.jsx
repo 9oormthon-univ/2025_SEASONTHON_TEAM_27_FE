@@ -9,28 +9,65 @@ export default function SubscribeModal({ onClose }) {
     backend: false,
     email: ""
   });
-  const [error, setError] = useState({ domain: false, email: false });
+  const [error, setError] = useState({
+    domain: false,
+    email: false,
+    emailAt: false
+  });
 
   const handleCheck = (key) => {
-    setFields({ ...fields, [key]: !fields[key] });
+    setFields({...fields, [key]: !fields[key]});
   };
 
   const handleEmailChange = (e) => {
-    setFields({ ...fields, email: e.target.value });
+    setFields({...fields, email: e.target.value});
+    // @ 포함 여부 즉시 검증
+    setError(prev => ({
+      ...prev,
+      emailAt: e.target.value && !e.target.value.includes('@')
+    }));
   };
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
     const domainValid = fields.ai || fields.frontend || fields.backend;
     const emailValid = fields.email.trim() !== "";
+    const emailAtValid = fields.email.includes('@');
 
     setError({
       domain: !domainValid,
-      email: !emailValid
+      email: !emailValid,
+      emailAt: !emailAtValid
     });
 
-    if (domainValid && emailValid) {
-      alert("구독 완료!");
-      onClose();
+    if (!domainValid || !emailValid || !emailAtValid) return;
+
+    // 체크된 분야 변환
+    const categories = [];
+    if (fields.ai) categories.push("AI");
+    if (fields.frontend) categories.push("FRONTEND");
+    if (fields.backend) categories.push("BACKEND");
+
+    // POST 요청
+    try {
+      const res = await fetch("http://15.164.189.54:8080/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: fields.email.trim(),
+          categories
+        })
+      });
+      const result = await res.json();
+      if (result.result === "SUCCESS") {
+        alert("구독 완료!");
+        onClose();
+      } else {
+        // result가 ERROR인 경우 (예시: {result:"ERROR", error:{code:"E001", message:"이미 구독한 메일입니다"}} )
+        alert(`[${result.error.code}] ${result.error.message}`);
+      }
+    } catch (e) {
+      console.error(e);
+      alert("서버 오류 또는 네트워크 문제로 구독에 실패했습니다.");
     }
   };
 
@@ -48,7 +85,7 @@ export default function SubscribeModal({ onClose }) {
             {[
               { key: "ai", label: "AI", day: "월요일" },
               { key: "frontend", label: "프론트엔드", day: "수요일" },
-              { key: "backend", label: "백엔드", day: "금요일" },
+              { key: "backend", label: "백엔드", day: "금요일" }
             ].map(({ key, label, day }) => (
               <label
                 key={key}
@@ -80,7 +117,7 @@ export default function SubscribeModal({ onClose }) {
           )}
         </div>
 
-        <div className={`email-area${error.email ? " error" : ""}`}>
+        <div className={`email-area${error.email || error.emailAt ? " error" : ""}`}>
           <label htmlFor="email-input" className="email-label">이메일</label>
           <input
             id="email-input"
@@ -89,17 +126,18 @@ export default function SubscribeModal({ onClose }) {
             placeholder="mailtrend@gmail.com"
             value={fields.email}
             onChange={handleEmailChange}
-            aria-invalid={error.email}
-            aria-describedby={error.email ? "email-error" : undefined}
+            aria-invalid={error.email || error.emailAt}
+            aria-describedby={error.email ? "email-error" : error.emailAt ? "email-at-error" : undefined}
           />
           {error.email && (
             <div id="email-error" className="email-error-label" role="alert">이메일을 입력해 주세요</div>
           )}
+          {error.emailAt && (
+            <div id="email-at-error" className="email-error-label" role="alert">@가 포함된 올바른 이메일을 입력하세요</div>
+          )}
         </div>
 
-        <button className="subscribe-btn" onClick={handleSubscribe}>
-          구독하기
-        </button>
+        <button className="subscribe-btn" onClick={handleSubscribe}>구독하기</button>
       </div>
     </div>
   );
