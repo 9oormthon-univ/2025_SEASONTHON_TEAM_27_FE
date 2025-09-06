@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/ArchiveList.css";
 import left from "../assets/left.svg";
 import right from "../assets/right.svg";
@@ -37,6 +38,7 @@ function categoryToTab(category) {
 }
 
 export default function ArchiveList() {
+  const nav = useNavigate();
   const [rawItems, setRawItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedTab, setSelectedTab] = useState("AI");
@@ -75,6 +77,7 @@ export default function ArchiveList() {
         week,
         title: item.title,
         url: item.content_url,
+        id: item.content_id,
       };
     });
   }, [rawItems]);
@@ -141,19 +144,26 @@ export default function ArchiveList() {
             <div className="archive-list-item">정보 없음</div>
           ) : (
             currentItems.map((item, idx) => (
-              <a
+              <div
                 key={idx}
                 className="archive-list-item"
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                tabIndex={0}
+                role="button"
+                onClick={() => nav(`/mail/${item.id}`)}
+                onKeyPress={e => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    nav(`/mail/${item.id}`);
+                  }
+                }}
               >
                 {item.year} {item.month} {item.week}<br />
-              </a>
+              </div>
+
             ))
           )}
         </div>
-        <div className="archive-pagination">
+      </div>
+      <div className="archive-pagination">
           <button
             className="archive-pagination-btn"
             onClick={() => setCurrentPage(currentPage - 1)}
@@ -178,8 +188,6 @@ export default function ArchiveList() {
           >
             <img src={right} alt="다음페이지" />
           </button>
-        </div>
-
       </div>
     </div>
   );

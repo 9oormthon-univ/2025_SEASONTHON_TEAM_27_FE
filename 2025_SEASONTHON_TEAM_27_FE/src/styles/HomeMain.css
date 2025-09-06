@@ -1,3 +1,9 @@
+@keyframes mailFloat {
+  0%   { transform: rotate(-20deg) translateX(0) translateY(0); }
+  50%  { transform: rotate(-20deg) translateX(-5px) translateY(20px); }
+  100%  { transform: rotate(-20deg) translateX(0) translateY(0px); }
+}
+
 .main {
   position: relative;
   width: 100%;
@@ -47,15 +53,6 @@
 /* 모든 메일 이미지에 동일한 회전 적용 */
 .mail-rotated {
   transform: rotate(-20deg);
+  animation: mailFloat 2s ease-in-out infinite;
 }
 
-/* 반응형 예시 */
-/* @media (max-width: 768px) {
-  .main-mail-img {
-    width: 120px;
-    max-width: 70vw;
-  }
-  .main-bg-img {
-    height: 100vh;
-  }
-} */

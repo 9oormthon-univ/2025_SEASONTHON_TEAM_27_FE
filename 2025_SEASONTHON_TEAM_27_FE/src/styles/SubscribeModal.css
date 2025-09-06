@@ -12,11 +12,10 @@
 }
 
 .subscribe-modal {
-  background: #fff;
-  border-radius: 22px;
-  width: 560px;
-  padding: 48px 32px 32px;
-  box-shadow: 0 6px 28px #0000001a;
+  background: var(--neutral5);
+  border-radius: 20px;
+  width: 585px;
+  padding: 32px;
   position: relative;
   max-width: 95vw;
   box-sizing: border-box;
@@ -32,20 +31,19 @@
   padding: 0;
 }
 .close-btn img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
 .subscribe-title {
   text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 44px;
+  font: var(--button1);
+  color: var(--nertral1);
+  margin-bottom: 37px;
 }
 
 .domain-area {
   background: transparent;
-  height: 88px;
   border-radius: 12px;
   margin-bottom: 18px;
   padding: 0;
@@ -57,33 +55,30 @@
 }
 
 .domain-area.error {
-  background: #dde5ff;
-  border: 2px solid #4160e8;
-  padding: 18px 22px 0 22px;
+  background: #E5F1FF;
+  border: none;
+  padding: 10px;
   height: auto;
   justify-content: flex-start;
 }
 
 .domain-label {
-  font-size: 20px;
-  color: #7a7a7a;
-  margin-bottom: 5px;
-  font-weight: 600;
+  font: var(--subtitle3);
+  color: var(--neutral3);
+  margin-bottom: 12px;
 }
 
 .domain-checks {
   display: flex;
-  gap: 24px;
-  margin-bottom: 8px;
+  gap: 40px;
+  margin-bottom: 32px;
 }
 
 .domain-check-label {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
   user-select: none;
-  outline-offset: 3px;
 }
 
 .domain-check-label:focus-visible {
@@ -104,10 +99,12 @@
 
 /* 커스텀 체크박스 박스 */
 .custom-checkbox {
-  width: 22px;
-  height: 22px;
-  border: 2px solid #555;
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  margin-right: 10px;
+  border: 1px solid #555;
+  border-radius: 2px;
   box-sizing: border-box;
   position: relative;
   flex-shrink: 0;
@@ -116,8 +113,7 @@
 
 /* 체크되었을 때 스타일 */
 .custom-checkbox-input:checked + .custom-checkbox {
-  background-color: #4160e8;
-  border-color: #4160e8;
+  background-color: #9112BC;
 }
 
 /* 체크 아이콘 스타일 (꺾인 체크 표시) */
@@ -139,28 +135,35 @@
   outline-offset: 2px;
 }
 
+.domain-labels {
+  display: flex;
+  flex-direction: column;
+}
+
 .domain-label-text {
-  font-weight: 600;
-  font-size: 16px;
-  color: #222;
+  font: var(--body3);
+  color: var(--neutral1);
   user-select: none;
 }
 
 .domain-day-text {
+  color: var(--neutral4);
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
   font-weight: 400;
-  font-size: 11px;
-  color: #999;
+  line-height: 120%; /* 12px */
   user-select: none;
 }
 
 .domain-error-label {
-  color: #4160e8;
+  color: var(--state1);
   font-size: 14px;
   margin-left: 2px;
 }
 
 .email-area {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   max-width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -170,14 +173,13 @@
 .email-area.error {
   background: #eaf0ff;
   border-radius: 12px;
-  border: 2px solid #4160e8;
-  padding: 18px 22px;
+  border: none;
+  padding: 10px;
 }
 
 .email-label {
-  font-size: 20px;
-  color: #7a7a7a;
-  font-weight: 600;
+  font: var(--subtitle3);
+  color: var(--neutral3);
   margin-bottom: 8px;
   overflow-wrap: break-word;
   word-break: keep-all;
@@ -185,17 +187,23 @@
 
 .email-input {
   width: 100%;
-  background: #f8fafc;
-  border-radius: 12px;
-  border: 1.5px solid #e7e9ee;
-  padding: 18px 20px;
-  font-size: 18px;
-  color: #222;
+  height: 56px;
+  background: var(--neutral5);
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  font: var(--body3);
+  padding-left: 22.26px;
+  color: var(--neutral1);
   box-sizing: border-box;
 }
 
+.email-input ::placeholder {
+  font: var(--body3);
+  color: var(--neutral4);
+}
+
 .email-error-label {
-  color: #4160e8;
+  color: var(--state1);
   font-size: 14px;
   margin-left: 2px;
   margin-top: 4px;

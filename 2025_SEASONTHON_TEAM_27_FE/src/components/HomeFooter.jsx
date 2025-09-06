@@ -1,9 +1,9 @@
+import "../styles/HomeFooter.css"
+
 export default function HomeFooter() {
     return (
-        <div>
-            <div>
-                <h1>Footer</h1>
-            </div>
+        <div className="home-footer-bg">
+
         </div>
     )
 }

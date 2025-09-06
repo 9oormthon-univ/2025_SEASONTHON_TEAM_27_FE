@@ -9,8 +9,8 @@ export default function HomeMain() {
     const [mailStep, setMailStep] = useState("closed");
 
     useEffect(() => {
-        const openedTimeout = setTimeout(() => setMailStep("opened"), 1000);
-        const messageTimeout = setTimeout(() => setMailStep("message"), 2200);
+        const openedTimeout = setTimeout(() => setMailStep("opened"), 200);
+        const messageTimeout = setTimeout(() => setMailStep("message"), 1000);
         return () => {
             clearTimeout(openedTimeout);
             clearTimeout(messageTimeout);

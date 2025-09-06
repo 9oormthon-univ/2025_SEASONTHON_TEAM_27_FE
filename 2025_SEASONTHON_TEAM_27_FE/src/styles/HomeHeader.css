@@ -2,7 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 97.5%;
   background: var(--neutral5);
+  background: rgba(245, 244, 250, 0.80); /* 예시: 밝은 회색/보라 반투명 */
+  backdrop-filter: blur(8px);            /* 더 스타일리시하게 (선택) */
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
   height: 75px;
   padding: 0 20px;
 }

@@ -3,6 +3,7 @@ import xcross from "../assets/xcross.svg";
 import "../styles/SubscribeModal.css";
 
 export default function SubscribeModal({ onClose }) {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [fields, setFields] = useState({
     ai: false,
     frontend: false,
@@ -16,19 +17,28 @@ export default function SubscribeModal({ onClose }) {
   });
 
   const handleCheck = (key) => {
-    setFields({...fields, [key]: !fields[key]});
+    const newFields = {...fields, [key]: !fields[key]};
+    setFields(newFields);
+
+    // 하나라도 선택되면 즉시 에러 해제
+    if (newFields.ai || newFields.frontend || newFields.backend) {
+      setError(prev => ({ ...prev, domain: false }));
+    }
   };
 
   const handleEmailChange = (e) => {
     setFields({...fields, email: e.target.value});
     // @ 포함 여부 즉시 검증
+    if (isSubmitted) {
     setError(prev => ({
       ...prev,
       emailAt: e.target.value && !e.target.value.includes('@')
     }));
+  }
   };
 
   const handleSubscribe = async () => {
+    setIsSubmitted(true); // 클릭 플래그 ON
     const domainValid = fields.ai || fields.frontend || fields.backend;
     const emailValid = fields.email.trim() !== "";
     const emailAtValid = fields.email.includes('@');
@@ -107,8 +117,10 @@ export default function SubscribeModal({ onClose }) {
                   aria-checked={fields[key]}
                 />
                 <span className="custom-checkbox" aria-hidden="true"></span>
-                <span className="domain-label-text" htmlFor={`checkbox-${key}`}>{label}</span>
-                <span className="domain-day-text">{day}</span>
+                <div className="domain-labels">
+                  <span className="domain-label-text" htmlFor={`checkbox-${key}`}>{label}</span>
+                  <span className="domain-day-text">{day}</span>
+                </div>
               </label>
             ))}
           </div>
@@ -132,7 +144,7 @@ export default function SubscribeModal({ onClose }) {
           {error.email && (
             <div id="email-error" className="email-error-label" role="alert">이메일을 입력해 주세요</div>
           )}
-          {error.emailAt && (
+          {isSubmitted && error.emailAt && (
             <div id="email-at-error" className="email-error-label" role="alert">@가 포함된 올바른 이메일을 입력하세요</div>
           )}
         </div>
