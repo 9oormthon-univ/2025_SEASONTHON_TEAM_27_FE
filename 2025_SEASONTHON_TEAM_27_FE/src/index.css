@@ -42,4 +42,15 @@
   --button1: 700 24px/1.2 'Pretendard', sans-serif;
   --button2: 700 16px/1.2 'Pretendard', sans-serif;
   --button3: 500 14px/1.2 'Pretendard', sans-serif;
+
+  /* Mobile Typography */
+  --m-title: 700 60px/1.2 'Pretendard', sans-serif;
+  --m-h1: 700 36px/1.2 'Pretendard', sans-serif;
+  --m-h2: 700 24px/1.2 'Pretendard', sans-serif;
+  --m-subtitle1: 700 18px/1.2 'Pretendard', sans-serif;
+  --m-subtitle2: 700 16px/1.2 'Pretendard', sans-serif;
+  --m-body1: 400 16px/1.6 'Pretendard', sans-serif;
+  --m-body2: 400 14px/1.6 'Pretendard', sans-serif;
+  --m-button1: 700 20px/1.2 'Pretendard', sans-serif;
+  --m-button2: 700 16px/1.2 'Pretendard', sans-serif;
 }

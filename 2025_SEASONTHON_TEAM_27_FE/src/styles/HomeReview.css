@@ -23,6 +23,13 @@
 .home-review-cards {
   display: flex;
   gap: 12px;
+  max-width: 1200px;
+  overflow-x: auto;
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE/Edge */
+}
+.home-review-cards::-webkit-scrollbar {
+  display: none;                 /* Chrome/Safari */
 }
 
 /* 단일 후기 카드 */

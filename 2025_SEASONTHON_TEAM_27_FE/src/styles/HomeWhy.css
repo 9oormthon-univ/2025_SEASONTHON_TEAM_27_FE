@@ -1,7 +1,22 @@
 /* HomeWhy.css */
+/* 초기 상태: 투명, 아래쪽에 위치 */
+.home-why-container {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 
+    opacity 2s cubic-bezier(0.4,0,0.2,1),
+    transform 2s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* 활성 상태: 불투명, 제자리 */
+.home-why-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .home-why-container {
-  width: 100vw;
+  width: 100%;
   background: #fff;
   display: flex;
   flex-direction: column;

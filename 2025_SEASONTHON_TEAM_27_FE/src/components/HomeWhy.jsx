@@ -1,10 +1,28 @@
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/HomeWhy.css";
 import why1 from '../assets/why1.svg';
 import why2 from '../assets/why2.svg';
 
 export default function HomeWhy() {
+  const ref = useRef();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.4 } /* 20% 보이면 시작 */
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="home-why-container">
+    <div
+      ref={ref}
+      className={`home-why-container${visible ? " visible" : ""}`}
+    >
       <div className="home-why-title">메일트렌드를 구독해야 하는 이유</div>
 
       <div className="home-why-content">

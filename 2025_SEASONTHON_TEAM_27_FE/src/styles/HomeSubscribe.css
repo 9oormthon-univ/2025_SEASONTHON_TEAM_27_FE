@@ -22,12 +22,11 @@
 
 .subscribe2 {
   display: flex;
-  width: 305px;
-  height: 61px;
   justify-content: center;
   align-items: center;
   border: none;
   border-radius: 100px;
+  padding: 12px 24px;
 
   font: var(--button1);
   color: var(--neutral5);

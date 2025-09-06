@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>월요일 AI 소식</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      background: none;
+      font-family: 'pretended', 'sans-serif';
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+    .container {
+      border-radius: 6px;
+      width: 540px;
+      padding: 0 30px;
+      margin: 0 auto;
+      background: #f7f7fb;
+      position: relative;
+      z-index: 0;
+      padding-bottom: 40px;
+    }
+    .header {
+      padding: 20px 0 16px 0;
+    }
+    .to {
+      margin-left: 8px;
+      color: #111;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 24px */
+    }
+    .main-title {
+      color: #111;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 38.4px */
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+    .menu-bar {
+      color: #111;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 16.8px */
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .menu-bar > span {
+      padding: 10px;
+    }
+    .intro-box {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 0 0 transparent;
+      padding: 12px 20px;
+      color: #111;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+      border: 1px solid #dfdfdf;
+    }
+    .section-title {
+      color: #a059e6;
+      color: #9112BC;
+      font-family: Pretendard;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 26.4px */
+      margin: 40px 0 12px 8px;
+    }
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .card {
+      display: flex;
+      padding: 19px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      align-self: stretch;
+      
+      border-radius: 10px;
+      border: 1px solid #DFDFDF;
+      background: #FFF;
+      
+      position: relative;
+    }
+    .card strong {
+      color: #111;
+      font-family: Pretendard;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 21.6px */
+    }
+    .card ul {
+      color: #111;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+      margin: 0px;
+      padding-left: 20px;
+    }
+    .card a {
+      position: absolute;
+      right: 20px;
+      bottom: 13px;
+      color: #111;
+      font-family: Pretendard;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 19.2px */
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: auto;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+    }
+    .mini-section-title {
+      color: #9112BC;
+      font-family: Pretendard;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 26.4px */
+      margin: 40px 0 12px 8px;
+    }
+    .word-list {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 20px;
+      border: 1px solid #dfdfdf;
+    }
+    .word-list li {
+      color: #111;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+      list-style-type: none;
+      position: relative;
+      padding-left: 10px;
+    }
+    .word-list li::before {
+      content: '*';
+      color: #FF6B6B;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%; /* 25.6px */
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+    }
+    .word-list b {
+      font-weight: 700;
+    }
+    .footer-svg {
+      position: relative;
+      bottom: 0;
+  	  left: 50%;
+  	  transform: translateX(-50%);
+      width: 600px;
+      height: 180px;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="to">To. ○○님</div>
+      <div class="main-title">월요일 AI 소식이 도착했어요</div>
+      <div class="menu-bar">
+        <span>이전 기사 보기</span>
+        |
+        <span>웹으로 보기</span>
+      </div>
+      <div class="intro-box">
+        오늘 AI 소식이 이렇게 바뀌었어요. 안 보면 진짜 손해!<br>
+        궁금하지 않나요? 😆 너만 안 보면 나 슬퍼요...
+      </div>
+    </div>
+    <div class="section-title">오늘의 트렌드</div>
+    <div class="card-list">
+      <div class="card">
+        <strong>GPT 기반 코드 리뷰 도구</strong>
+        <ul>
+          <li>Pull request 분석 자동화, 리뷰 시간 50% 단축 가능</li>
+          <li>변수/함수 이름, 로직 오류까지 빠르게 체크 가능</li>
+          <li>팀원 검토를 보조하며 코드 품질 향상에 도움</li>
+        </ul>
+        <a href="#">원문 보러 가기</a>
+      </div>
+      <div class="card">
+        <strong>AI 디버깅 툴 β 출시</strong>
+        <ul>
+          <li>AI가 버그 위치를 자동으로 찾아 표시</li>
+          <li>로그 분석까지 지원해 문제 해결 속도 향상</li>
+          <li>반복적 디버깅 업무를 크게 줄여 개발 효율 증가</li>
+        </ul>
+        <a href="#">원문 보러 가기</a>
+      </div>
+      <div class="card">
+        <strong>자동화 테스트 AI 적용</strong>
+        <ul>
+          <li>테스트 케이스 생성 및 실행 70% 이상 자동화</li>
+          <li>QA 담당자의 반복 작업 부담 최소화</li>
+          <li>서비스 안정성과 코드 품질 유지에 기여</li>
+        </ul>
+        <a href="#">원문 보러 가기</a>
+      </div>
+      <div class="card">
+        <strong>자동화 테스트 AI 적용</strong>
+        <ul>
+          <li>테스트 케이스 생성 및 실행 70% 이상 자동화</li>
+          <li>QA 담당자의 반복 작업 부담 최소화</li>
+          <li>서비스 안정성과 코드 품질 유지에 기여</li>
+        </ul>
+        <a href="#">원문 보러 가기</a>
+      </div>
+      <div class="card">
+        <strong>자동화 테스트 AI 적용</strong>
+        <ul>
+          <li>테스트 케이스 생성 및 실행 70% 이상 자동화</li>
+          <li>QA 담당자의 반복 작업 부담 최소화</li>
+          <li>서비스 안정성과 코드 품질 유지에 기여</li>
+        </ul>
+        <a href="#">원문 보러 가기</a>
+      </div>
+    </div>
+    <div class="mini-section-title">이 단어가 어렵나요?</div>
+    <ul class="word-list">
+      <li>
+        <b>Pull request:</b> Git/GitHub에서 사용하는 기능으로 코드 변경 사항을 공유하고 리뷰받기 위한 요청
+      </li>
+      <li>
+        <b>디버깅:</b> 소프트웨어나 코드에서 오류(버그)를 찾아 수정하는 과정
+      </li>
+      <li>
+        <b>테스트 케이스:</b> 소프트웨어 기능이 정상적으로 작동하는지 확인하기 위한 절차나 조건
+      </li>
+    </ul>
+    <div class="footer-svg">
+    	<svg xmlns="http://www.w3.org/2000/svg" width="600" height="255" viewBox="0 0 600 255" fill="none">
+          <!-- 첫 번째 삼각형(좌측) -->
+          <path d="M16.8 1.6
+                   C9.6 -1.5 0 3.4 0 10.7
+                   L0 245
+                   C0 250.5 5.1 255 11.9 255
+                   H569.2
+                   C580.5 255 583.9 240.4 574.8 235.9
+                   L16.8 1.6Z"
+                fill="url(#gradient1)" />
+          <!-- 두 번째 삼각형(우측) -->
+          <path d="M582.1 1.6
+                   C588.8 -1.5 600 3.4 600 10.7
+                   L600 245
+                   C600 250.5 593.7 255 587 255
+                   H86.2
+                   C75.2 255 72.1 240.4 81.4 235.9
+                   L582.1 1.6Z"
+                fill="url(#gradient2)" />
+          <!-- 가운데 삼각형(상단 → 아래로 79px 이동) -->
+          <path d="M0 151.6
+                   C0 146.9 3.8 142.8 8.7 141.8
+                   L298.7 79.5
+                   C300 79.2 301.6 79.2 302.9 79.5
+                   L591.3 141.8
+                   C596.2 142.8 600 146.9 600 151.6
+                   V250
+                   C600 255.5 595.5 260 590 260
+                   H11.9
+                   C5.1 260 0 255.5 0 250
+                   V151.6Z"
+                fill="url(#gradient3)" />
+          <defs>
+            <linearGradient id="gradient1" x1="570" y1="3" x2="300" y2="449" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E3BDEC"/>
+              <stop offset="1" stop-color="#9747FF"/>
+            </linearGradient>
+            <linearGradient id="gradient2" x1="6" y1="3" x2="244" y2="449" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E3BDEC"/>
+              <stop offset="1" stop-color="#9747FF"/>
+            </linearGradient>
+            <linearGradient id="gradient3" x1="0" y1="84.6" x2="84.7" y2="334" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E3BDEC"/>
+              <stop offset="1" stop-color="#9747FF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+  	</div>
+  </div>
+  <!-- 삼각형 세 개 SVG 그라데이션 -->
+</body>
+</html>

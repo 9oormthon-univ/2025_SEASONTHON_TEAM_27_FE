@@ -12,7 +12,7 @@
 .archive-title {
   font: var(--h2);
   color: var(--neutral1);
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .archive-desc {
@@ -43,9 +43,6 @@ color : var(--neutral4);
   transition: color 0.3s ease;
 }
 
-
-
-
 .archive-line {
   border: none;
   border-bottom: 1px solid var(--neutral4);
@@ -55,18 +52,18 @@ color : var(--neutral4);
 .archive-filter {
   display: flex;
   gap: 10px;
-  margin-left: 20px;
+  margin-left: 4px;
   margin-bottom: 8px;
 }
 
 .archive-select {
   font: var(--body3);
   color: var(--neutral3);
-width: 80px;
-height: 35px;
-opacity: 1;
-border-radius: 10px;
-border: none;
+  width: 80px;
+  height: 35px;
+  opacity: 1;
+  border-radius: 10px;
+  border: none;
   padding: 8px 12px;
   background-color: #fff;
   cursor: pointer;
@@ -81,12 +78,13 @@ border: none;
 .archive-list-item {
     display: flex;
     align-items: center;
-    font: var(--body3);
+    font: var(--body2);
     color: var(--neutral2);
   height: 70px;
   padding-left: 24px;
   text-decoration: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .archive-list-item:hover {

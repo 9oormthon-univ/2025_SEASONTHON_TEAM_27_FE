@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/HomeReview.css";
 
 export default function HomeReview() {
+  const containerRef = useRef(null);
+
   const reviews = [
     {
       name: "김○명",
@@ -22,14 +24,46 @@ export default function HomeReview() {
       name: "손○빈",
       role: "대학생 개발자",
       content: "“읽을 때마다 바로 동료와 공유하게 돼요.”"
-    }
+    },
+    {
+      name: "유○영",
+      role: "대학생 개발자",
+      content: "“바쁜 일상 속에서 따로 뉴스를 찾지 않아도 돼서 편리해요.”"
+    },
   ];
+
+  let isDown = false;
+  let startX, scrollLeft;
+
+  const handleMouseDown = e => {
+    isDown = true;
+    containerRef.current.classList.add('dragging');
+    startX = e.pageX - containerRef.current.offsetLeft;
+    scrollLeft = containerRef.current.scrollLeft;
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
+  const handleMouseMove = e => {
+    if (!isDown) return;
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = x - startX;
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+  const handleMouseUp = () => {
+    isDown = false;
+    containerRef.current.classList.remove('dragging');
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
+  };
 
   return (
     <div className="home-review-background">
       <div className="home-review-container">
         <div className="home-review-title">후기</div>
-        <div className="home-review-cards">
+        <div className="home-review-cards"
+             ref={containerRef}
+             onMouseDown={handleMouseDown}>
           {reviews.map((review, idx) => (
             <div className="home-review-card" key={idx}>
               <div className="home-review-profile">
