@@ -1,6 +1,5 @@
 .mail-bg {
     background: var(--back1);
-    height: 805px;
     padding: 80px 360px 0;
     display: flex;
     justify-content: space-between;
@@ -36,14 +35,29 @@
     color: var(--neutral2);
 }
 
+.mail-content-container {
+    width: 100%;
+    background-color: var(--back2);
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
 .mail-content {
-    margin: 0 auto 10px auto;
+    margin: auto;
+    width: 600px;       /* 너비 고정 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+.mail-content img {
+    width: 600px;
+    height: auto;
 }
 
 .mail-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .mail-button {

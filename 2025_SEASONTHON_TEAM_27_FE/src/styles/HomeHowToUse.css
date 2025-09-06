@@ -127,11 +127,15 @@
     gap: 40px;
   }
 
-  .home-howtouse-card {
-    width: 100%;
+  .home-howtouse-card1 {
+    max-width: 300px;
+  }
+  .home-howtouse-card2 {
+    max-width: 300px;
   }
 
   .home-howtouse-img {
+    width: 300px;
     height: 200px;
   }
 
